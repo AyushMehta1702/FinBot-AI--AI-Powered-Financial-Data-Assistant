@@ -9,14 +9,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Setup the OpenAI API key
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 # Initialize the OpenAI LLM
 llm = ChatOpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY)
 
 # Initialize the SQL Database wrapper
-DB = os.getenv('DataBase')
-#DB = st.secrets["DataBase"]
+#DB = os.getenv('DataBase')
+DB = st.secrets["DataBase"]
 database = SQLDatabase.from_uri(DB)
 
 
