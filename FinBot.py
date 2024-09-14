@@ -16,6 +16,7 @@ llm = ChatOpenAI(temperature=0.7, openai_api_key=OPENAI_API_KEY)
 
 # Initialize the SQL Database wrapper
 DB = os.getenv('DataBase')
+#DB = st.secrets["DataBase"]
 database = SQLDatabase.from_uri(DB)
 
 
