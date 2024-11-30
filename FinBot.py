@@ -11,13 +11,13 @@ load_dotenv()
 
 # Setup the OpenAI API key
 api_key = st.secrets["OPENAI_API_KEY"]
-
+DB = st.secrets["DataBase"]
 # Initialize the OpenAI LLM
 llm = ChatOpenAI(temperature=0.7, openai_api_key=api_key)
 
 # Initialize the SQL Database wrapper
 #DB = os.getenv('DataBase')
-DB = st.secrets["DataBase"]
+
 database = SQLDatabase.from_uri(DB)
 
 
